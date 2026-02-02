@@ -4,7 +4,7 @@
 [![PyTorch 2.8](https://img.shields.io/badge/pytorch-2.8.0-ee4c2c.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Official implementation of **"Client-Specific Masked Adversarial Watermarking for Federated Model Ownership Verification"** (USENIX Security 2026).
+Official implementation of **"Client-Specific Masked Adversarial Watermarking for Federated Model Ownership Verification"**.
 
 ## Overview
 
@@ -44,6 +44,13 @@ CSMAW/
 ├── pretrained_dir/              # Pre-trained model weights
 └── artifacts/                   # Experiment outputs
 ```
+
+### Datasets
+The following publicly available datasets are used in this project:
+- 1. **MNIST**: The MNIST dataset is a collection of handwritten digits, widely used for training image processing systems. It contains 60,000 training images and 10,000 testing images of digits 0 through 9.
+- 2. **CIFAR-10**: The CIFAR-10 dataset consists of 60,000 32x32 color images in 10 different classes, with 6,000 images per class. It is commonly used for benchmarking machine learning algorithms in image classification tasks.
+- 3. **GTSRB**: The German Traffic Sign Recognition Benchmark (GTSRB) dataset contains over 50,000 images of traffic signs. It is designed for the task of recognizing traffic signs and is widely used in computer vision research.
+All these datasets are publicly available and can be accessed from their respective repositories.
 
 ## Installation
 

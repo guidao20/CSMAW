@@ -7,16 +7,10 @@ artifacts_base_dir="./artifacts"
 # Generate timestamp-based directory to store results (prevents overwriting)
 timestamp=$(date +"%Y%m%d%H%M")
 
-
 # Experiment configuration parameters
 dataset_list=('mnist' 'gtsrb' 'cifar10')
 model_list=('lenet' 'resnet18' 'tailnet' 'vgg16')
-
-
-dataset_list=('cifar10')
-model_list=('resnet18')
-
-num_clients=60
+num_clients=5
 
 echo -e "===== Run Identifier ===== \n ${timestamp}"
 for dataset in "${dataset_list[@]}";do
@@ -32,7 +26,7 @@ for dataset in "${dataset_list[@]}";do
             --pretrained \
             --num_rounds 10 
 
-        python3 Step2_gen_adv_examples.py \
+        python3 Step2_gen_watermarks.py \
             --num_clients $num_clients \
             --artifacts_dir $artifacts_dir \
             --dataset $dataset \

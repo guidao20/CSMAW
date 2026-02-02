@@ -6,7 +6,7 @@
 
 Official implementation of **"Client-Specific Masked Adversarial Watermarking for Federated Model Ownership Verification"** (USENIX Security 2026).
 
-## 📖 Overview
+## Overview
 
 CSMAW is a novel **non-invasive, black-box verifiable** watermarking mechanism for federated learning (FL) that enables secure ownership attribution without modifying model parameters. Unlike existing methods that suffer from watermark dilution during model aggregation, CSMAW maintains high verification accuracy (98.8%–100.0%) even with 60 clients.
 
@@ -28,14 +28,12 @@ CSMAW comprises three main components:
    - PGD-based adversarial perturbation generation
 3. **Client Ownership Verification**: Black-box query-based verification
 
-![Method Overview](docs/method_overview.png)
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 CSMAW/
 ├── Step1_FLtraining.py          # Federated learning training
-├── Step2_gen_watermarks.py    # Adversarial watermark generation
+├── Step2_gen_watermarks.py      # Adversarial watermark generation
 ├── Step3_traceability.py        # Ownership verification & tracing
 ├── run.sh                       # Automated experiment runner
 ├── requirements.txt             # Python dependencies
@@ -47,7 +45,7 @@ CSMAW/
 └── artifacts/                   # Experiment outputs
 ```
 
-## 🔧 Installation
+## Installation
 
 ### Prerequisites
 
@@ -80,7 +78,7 @@ torch==2.8.0
 torchvision==0.23.0
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Run Complete Pipeline
 
@@ -100,10 +98,10 @@ Train client models using FedAvg:
 
 ```bash
 python Step1_FLtraining.py \
-    --num_clients 60 \
-    --dataset cifar10 \
-    --model vgg16 \
-    --artifacts_dir ./artifacts/cifar10/vgg16 \
+    --num_clients 5 \
+    --dataset mnist \
+    --model lenet \
+    --artifacts_dir ./artifacts/mnist/lenet \
     --pretrained \
     --num_rounds 10 \
     --local_epoch 1 \
@@ -132,11 +130,11 @@ python Step1_FLtraining.py \
 Generate client-specific masked adversarial watermarks:
 
 ```bash
-python Step2_gen_adv_examples.py \
-    --num_clients 60 \
-    --dataset cifar10 \
-    --model vgg16 \
-    --artifacts_dir ./artifacts/cifar10/vgg16 \
+python Step2_gen_watermarks.py \
+    --num_clients 5 \
+    --dataset mnist \
+    --model lenet \
+    --artifacts_dir ./artifacts/mnist/lenet \
     --cleanset_max 300 \
     --pgd_eps 0.8 \
     --pgd_alpha 0.04 \
@@ -165,10 +163,10 @@ Verify ownership and trace adversarial examples:
 
 ```bash
 python Step3_traceability.py \
-    --num_clients 60 \
-    --dataset cifar10 \
-    --model vgg16 \
-    --artifacts_dir ./artifacts/cifar10/vgg16 \
+    --num_clients 5 \
+    --dataset mnist \
+    --model lenet \
+    --artifacts_dir ./artifacts/mnist/lenet \
     --pgd_eps 0.8
 ```
 
@@ -176,7 +174,7 @@ python Step3_traceability.py \
 - Targeted success rate matrix (detector × source)
 - Mask delta tracing results with fusion scores
 
-## 📊 Experimental Configuration
+## Experimental Configuration
 
 Based on the paper's configuration:
 

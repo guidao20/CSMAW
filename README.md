@@ -50,6 +50,7 @@ The following publicly available datasets are used in this project:
 - **MNIST**: The MNIST dataset is a collection of handwritten digits, widely used for training image processing systems. It contains 60,000 training images and 10,000 testing images of digits 0 through 9.
 - **CIFAR-10**: The CIFAR-10 dataset consists of 60,000 32x32 color images in 10 different classes, with 6,000 images per class. It is commonly used for benchmarking machine learning algorithms in image classification tasks.
 - **GTSRB**: The German Traffic Sign Recognition Benchmark (GTSRB) dataset contains over 50,000 images of traffic signs. It is designed for the task of recognizing traffic signs and is widely used in computer vision research.
+  
 All these datasets are publicly available and can be accessed from their respective repositories.
 
 ## Installation

@@ -113,7 +113,7 @@ python Step1_FLtraining.py \
     --pretrained \
     --num_rounds 200 \
     --local_epoch 1 \
-    --learning_rate 1e-4 \
+    --learning_rate 1e-3 \
     --batch_size 64
 ```
 

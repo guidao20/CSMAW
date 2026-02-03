@@ -23,7 +23,7 @@ for dataset in "${dataset_list[@]}";do
             --artifacts_dir $artifacts_dir \
             --dataset $dataset \
             --model $model \
-            --num_rounds 1 
+            --num_rounds 200 
 
         python3 Step2_gen_watermarks.py \
             --num_clients $num_clients \

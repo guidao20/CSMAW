@@ -110,7 +110,6 @@ python Step1_FLtraining.py \
     --dataset mnist \
     --model lenet \
     --artifacts_dir ./artifacts/mnist/lenet \
-    --pretrained \
     --num_rounds 200 \
     --local_epoch 1 \
     --learning_rate 1e-3 \

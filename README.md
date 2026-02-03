@@ -123,9 +123,9 @@ python Step1_FLtraining.py \
 | `--dataset` | Required | Dataset name (mnist/cifar10/gtsrb) |
 | `--model` | Required | Model architecture (lenet/resnet18/tailnet/vgg16) |
 | `--pretrained` | False | Retrain the model, if True, denote load the pretrained model in ./pretrained_dir|
-| `--num_rounds` | 1 | Number of FL communication rounds |
+| `--num_rounds` | 200 | Number of FL communication rounds |
 | `--local_epoch` | 1 | Local training epochs per round |
-| `--learning_rate` | 1e-4 | SGD learning rate |
+| `--learning_rate` | 1e-3 | SGD learning rate |
 | `--batch_size` | 64 | Training batch size |
 
 **Outputs:**
@@ -209,9 +209,9 @@ Based on the paper's configuration:
 | Stage | Parameter | Value |
 |-------|-----------|-------|
 | **FL Training** | Batch Size | 64 |
-| | Communication Rounds | 10 |
+| | Communication Rounds | 200 |
 | | Local Epochs | 1 |
-| | Learning Rate | 1e-4 |
+| | Learning Rate | 1e-3 |
 | | Optimizer | SGD (momentum=0.99) |
 | **Watermark Generation** | PGD Epsilon (ε) | 0.8 |
 | | PGD Alpha (α) | 0.04 |
